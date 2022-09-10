@@ -37,7 +37,6 @@ describe('list with all user deposit and withdrawal operations', () => {
       type: OperationType.DEPOSIT
     })
 
-
     await inMemoryStatementsRepository.create({
       user_id: user.id as string,
       amount: 50,
@@ -45,10 +44,7 @@ describe('list with all user deposit and withdrawal operations', () => {
       type: OperationType.DEPOSIT
     })
 
-    const balance = await getBalanceUseCase.execute({ user_id: user.id as string })
-
-    console.log(balance);
-    // expect(balance).toBe(100);
-
+    const {balance} = await getBalanceUseCase.execute({ user_id: user.id as string })
+    expect(balance).toBe(100);
   })
 })
