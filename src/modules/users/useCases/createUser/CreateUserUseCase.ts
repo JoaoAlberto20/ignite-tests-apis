@@ -1,5 +1,5 @@
-import { inject, injectable } from "tsyringe";
 import { hash } from 'bcryptjs';
+import { inject, injectable } from "tsyringe";
 
 import { CreateUserError } from "./CreateUserError";
 
@@ -27,6 +27,7 @@ export class CreateUserUseCase {
       name,
       password: passwordHash,
     });
+
 
     return user;
   }
