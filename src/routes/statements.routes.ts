@@ -6,6 +6,7 @@ import { GetStatementOperationController } from '../modules/statements/useCases/
 import { ensureAuthenticated } from '../shared/infra/http/middlwares/ensureAuthenticated';
 
 const statementRouter = Router();
+
 const getBalanceController = new GetBalanceController();
 const createStatementController = new CreateStatementController();
 const getStatementOperationController = new GetStatementOperationController();
